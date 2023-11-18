@@ -15,6 +15,22 @@ struct FileRecord : Content {
     public var name: String
 }
 
+protocol GoogleFileProvider {
+    func doSomething() -> Int;
+}
+
+class GoogleFileProviderImpl : GoogleFileProvider {
+    public func doSomething() -> Int {
+        return 1;
+    }
+}
+
+extension Application {
+    var fileProvider: GoogleFileProvider {
+        return GoogleFileProviderImpl()
+    }
+}
+
 struct FilesController : RouteCollection {
     func boot (routes: RoutesBuilder) throws {
         let files = routes.grouped("files")
@@ -22,6 +38,7 @@ struct FilesController : RouteCollection {
     }
     
     func getFiles(req: Request) async throws -> [FileRecord] {
+        var gfp = req.application.fileProvider
         return []
     }
 }
