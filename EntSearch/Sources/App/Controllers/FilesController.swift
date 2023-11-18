@@ -8,6 +8,11 @@
 import Foundation
 import Vapor
 
+struct FileQueryParams : Content {
+    var email : String?
+    var folder : String?
+}
+
 struct FileRecord : Content {
     public var id: String
     public var kind: String
@@ -38,6 +43,8 @@ struct FilesController : RouteCollection {
     }
     
     func getFiles(req: Request) async throws -> [FileRecord] {
+        let fqp = try req.query.decode(FileQueryParams.self)
+
         var gfp = req.application.fileProvider
         return []
     }
