@@ -1,4 +1,5 @@
 import Vapor
+import CloudStorage
 
 func routes(_ app: Application) throws {
     app.get { req async in
@@ -9,5 +10,6 @@ func routes(_ app: Application) throws {
         "Hello, world!"
     }
     
+    app.googleCloud.storage.configuration = .default()
     try app.register(collection: FilesController())
 }

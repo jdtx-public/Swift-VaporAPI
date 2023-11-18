@@ -28,6 +28,33 @@
       }
     },
     {
+      "identity" : "google-cloud",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vapor-community/google-cloud.git",
+      "state" : {
+        "revision" : "b14c229f87664c3d4e30e4a07dd6eff25c3df1ff",
+        "version" : "1.4.1"
+      }
+    },
+    {
+      "identity" : "google-cloud-kit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vapor-community/google-cloud-kit.git",
+      "state" : {
+        "revision" : "17b2eec3df26c6535a90b5650dee53670494f4d9",
+        "version" : "1.0.0-rc.9"
+      }
+    },
+    {
+      "identity" : "jwt-kit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vapor/jwt-kit.git",
+      "state" : {
+        "revision" : "cd0fe3af36764e876182137c3132a6d8459e1867",
+        "version" : "4.13.1"
+      }
+    },
+    {
       "identity" : "multipart-kit",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/vapor/multipart-kit.git",

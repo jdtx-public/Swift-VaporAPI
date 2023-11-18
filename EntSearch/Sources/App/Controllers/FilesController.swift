@@ -44,8 +44,15 @@ struct FilesController : RouteCollection {
     
     func getFiles(req: Request) async throws -> [FileRecord] {
         let fqp = try req.query.decode(FileQueryParams.self)
+        
+        // email is required
+        if fqp.email == nil {
+            throw Abort(.badRequest)
+        }
+        
+        let reqEmail = fqp.email!
+        let reqFolder = fqp.folder ?? ""
 
-        var gfp = req.application.fileProvider
         return []
     }
 }
