@@ -12,4 +12,5 @@ func routes(_ app: Application) throws {
     
     app.googleCloud.storage.configuration = .default()
     try app.register(collection: FilesController())
+    try app.register(collection: DrivesController())
 }
